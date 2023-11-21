@@ -1,19 +1,10 @@
 <h1>The list of tasks:</h1>
 
 <div>
-  <!-- Method 1 -->
-  <!-- @if(count($tasks))
-    @foreach($tasks as $task)
-      <p>{{ $task -> id }} : <span>{{ $task -> title }}</span></p>
-    @endforeach
-    <div>There are tasks!</div>
-  @else
-    <div>There are no tasks!</div>
-  @endif -->
-  
-  <!-- Method 2 -->
   @forelse($tasks as $task)
-    <p>{{ $task -> id }} : <span>{{ $task -> title }}</span></p>
+    <div>
+      <a href="{{ route('tasks.show', ['id' => $task->id]) }}"><span>{{ $task -> title }}</span></a>
+    </div>
   @empty
     <div>There are no tasks!</div>
   @endforelse
