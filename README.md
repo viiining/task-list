@@ -1,1 +1,1 @@
-# Laravel Practice - Project 001 task-lists
+# Laravel Practice - Project 001 Task Lists App
