@@ -24,6 +24,9 @@
     <div>
       <label for="description">Description</label>
       <textarea name="description" id="description" rows="3"></textarea>
+      @error('title')
+        <p class="error-message">{{ $message }}</p>
+      @enderror
     </div>
     <div>
       <label for="long_description">Long Description</label>
