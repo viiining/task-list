@@ -2,12 +2,24 @@
 
 @section('title', 'Add New Task')
 
+@section('styles')
+  <style>
+    .error-message {
+      color: red;
+      font-size: 12px
+    }
+  </style>
+@endsection
+
 @section('content')
   <form method="POST" action="{{ route('tasks.store') }}">
     @csrf
     <div class="form-group">
       <label for="title">Title</label>
       <input type="text" name="title" id="title" placeholder="Enter title">
+      @error('title')
+        <p class="error-message">{{ $message }}</p>
+      @enderror
     </div>
     <div>
       <label for="description">Description</label>
