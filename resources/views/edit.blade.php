@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
-  <form method="POST" action="{{ route('tasks.update', ['id' => $task->id]) }}">
+  <form method="POST" action="{{ route('tasks.update', ['task' => $task->id]) }}">
     @csrf
     {{-- 因為 form method 只有 "GET" 與 "POST"，所以要用 @method('PUT') 來指定 method 為 "PUT" (或 "PATCH") --}}
     @method('PUT')
