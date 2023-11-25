@@ -14,4 +14,10 @@
   <div>
     <a href="{{ route('tasks.create') }}">Add New Task</a>
   </div>
+
+  @if ($tasks->count())
+    <nav>
+      {{ $tasks->links() }}
+    </nav>
+  @endif
 @endsection
