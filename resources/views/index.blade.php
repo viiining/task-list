@@ -10,4 +10,8 @@
   @empty
     <div>There are no tasks!</div>
   @endforelse
+
+  <div>
+    <a href="{{ route('tasks.create') }}">Add New Task</a>
+  </div>
 @endsection
