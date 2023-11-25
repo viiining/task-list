@@ -40,6 +40,7 @@
       </textarea>
     </div>
     <div>
+      <a href="{{ route('tasks.index') }}">Back to Home</a>
       <button type="submit">
         @isset($task)
           Update Task
