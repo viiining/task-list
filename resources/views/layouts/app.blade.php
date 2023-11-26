@@ -12,11 +12,25 @@
     .add_btn {
       @apply text-white font-semibold text-sm bg-emerald-600 p-2 rounded-lg hover:text-black hover:bg-emerald-300
     }
+
     .show_btn {
       @apply rounded-md px-2 py-1 text-center font-medium text-slate-700 shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50
     }
+
     .link {
       @apply text-black font-semibold hover:underline decoration-emerald-600 decoration-4
+    }
+
+    label {
+      @apply block font-medium text-slate-700 mb-2
+    }
+
+    input, textarea {
+      @apply block w-full border border-slate-300 rounded-md shadow-sm p-2 my-2 text-slate-700
+    }
+
+    .error-message {
+      @apply text-red-500 text-xs
     }
   </style>
   {{-- blade-formatter-enable --}}
