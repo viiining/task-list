@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Task Lists App</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
 
   {{-- blade-formatter-disable --}}
   <style type="text/tailwindcss">
@@ -40,14 +41,18 @@
 </head>
 <body class="container mx-auto mt-10 mb-10 max-w-lg">
   <h1 class="text-2xl font-bold">@yield('title')</h1>
-  <div>
-    <div class="my-5 px-2 py-3 rounded-lg border border-2 border-green-500 bg-green-200 w-full font-medium text-md">
-      <strong class="font-bold">Success!</strong>
-      <div>This is a flash message!!!!</div>
-    </div>
-    {{-- @if (session()->has('success'))
-      <div>{{ session('success') }}</div>
-    @endif --}}
+    @if (session()->has('success'))
+      <div x-data="{ flash: true }">
+        <div x-show="flash" class="relative my-5 px-2 py-3 rounded-lg border border-2 border-green-500 bg-green-200 w-full font-medium text-md" role="alert">
+          <strong class="font-bold">Success!</strong>
+          <div>{{ session('success') }}</div>
+          <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+            <svg @click="flash = false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </span>
+        </div>
+    @endif
 
     @yield('content')
   </div>
